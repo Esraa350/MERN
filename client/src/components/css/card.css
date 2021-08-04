@@ -1,0 +1,8 @@
+.img{
+ height: 200px;
+  }
+  .cardproduct:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+  background-color: rgba(91, 76, 221, 0.5);
+  }

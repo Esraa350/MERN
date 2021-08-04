@@ -55,7 +55,7 @@ UserController.login = async (req, res, next) => {
           return res.json({ errors: "Invalid password" });
         }
         return  res.status(200).send({
-            username: user.username,
+            user: user,
           });
     }catch (error) {
         return res.status(500).send({ error: "server error" });

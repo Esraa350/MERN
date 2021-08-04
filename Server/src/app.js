@@ -24,7 +24,7 @@ app.use("/watchList",watchListRouter);
 //---------- Errors ----------//
 app.use((req,res,next)=>{
     res.status(404).send({
-       message:'not found'
+       error:'not found'
     })
  })
  
