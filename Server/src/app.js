@@ -5,7 +5,9 @@ const logger=require("morgan");
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const userRoute=require('./Routes/user');
-
+const categoryRoutes = require("./Routes/category");
+const productRouters=require("./Routes/Product");
+const watchListRouter=require("./Routes/watchList")
 const app=express();
 //---------- DB Config ----------//
 require("./boot/DBConnection");
@@ -16,7 +18,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 //---------- Routes ----------//
 app.use("/user",userRoute);
-
+app.use("/category",categoryRoutes);
+app.use("/product",productRouters);
+app.use("/watchList",watchListRouter);
 //---------- Errors ----------//
 app.use((req,res,next)=>{
     res.status(404).send({
